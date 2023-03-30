@@ -26,7 +26,7 @@ class MyClient {
         response = in.readLine(); // receive OK
         System.out.println("Server: " + response);
 
-        while(!response.equals(NONE)){
+        while(!response.equals("NONE")){
             message = "REDY";
             out.println(message);
             System.out.println("Client: " + message);
@@ -48,74 +48,35 @@ class MyClient {
             response = in.readLine();
             System.out.println("Server: " + response);
 
+            String job = response.copyValueOf(response);
+
             int nCores = 0;
             String[] servSpecs;
 
-            for(int i = 0; i < nRecs; ++i) {
+            for(int i = 0; i < nRecs; i++) {
                 servSpecs = response.split(" ");
-
+                if(serverSpecs[4].compareTo(nCore) >= 0){
+                    nCore = servSpecs[4];
+                    sType = servSpecs[0];
+                }
             }
-            /*
-            if(){
 
+            message = "OK";
+            out.printLn(message);
+            System.out.println("Client: " + message);
+            response = in.readLine();
+            System.out.println("Server: " + response);
+
+            String[] jobArr = job.split(" ");
+            if(jobArr[0].equals("JOBN")){
+                message = "SCHD " + jobArr[2] + " " + sType + " 0";
+                out.printLn(message);
+                System.out.println("Client: " + message);
+                response = in.readLine();
+                System.out.println("Server: " + response);
             }
-            */
         }
 
-
-  /*
-        out.println("REDY");
-	response = in.readLine();
-	System.out.println("Server: " + response);
-
-	out.println("GETS All");
-	response = in.readLine();
-	System.out.println("Server: " + response);
-
-        out.println("OK");
-        response = in.readLine();
-        System.out.println("Server: " + response);
-
-        String[] strArr = response.split(" ");
-        String nCore = strArr[4];
-        String sType = strArr[0];
-
-        while(!response.equals(".")){
-        	strArr = response.split(" ");
-        	if(strArr[4].compareTo(nCore) >= 0){
-        		nCore = strArr[4];
-        		sType = strArr[0];
-        	}
-        	out.println("OK");
-        	System.out.println(nCore);
-        	response = in.readLine();
-        	System.out.println("Server: " + response);
-        }
-
-        System.out.println(sType);
-
-        for(int i = 0; i < 10; i++) {
-        	out.println("REDY");
-		response = in.readLine();
-		System.out.println("Server: " + response);
-
-		out.println("GETS All");
-		response = in.readLine();
-		System.out.println("Server: " + response);
-
-        	out.println("OK");
-        	response = in.readLine();
-        	System.out.println("Server: " + response);
-
-        	out.println("OK");
-        	response = in.readLine();
-        	System.out.println("Server: " + response);
-
-        	out.println("SCHD "+ i + " " + sType + " 0");
-		response = in.readLine();
-		System.out.println("Server: " + response);
-        }
-*/
         message = "QUIT";
         out.println(message);
         System.out.println("Client: " + message);

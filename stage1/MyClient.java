@@ -1,25 +1,5 @@
 import java.net.*;
 import java.io.*;
-/*class MyClient{
-	public static void main(String args[])throws Exception{
-		Socket s = new Socket("localhost", 50000);
-		DataInputStream din = new DataInputStream(s.getInputStream());
-		DataOutputStream dout = new DataOutputStream(s.getOutputStream());
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-		String str = "", str2 = "";
-		while(!str.equals("stop")){
-			str = br.readLine();
-			dout.write((str + "\n").getBytes());
-			dout.flush();
-			str2 = din.readLine();
-			System.out.println("Server says: "+str2);
-		}
-
-		dout.close();
-		s.close();
-	}
-}*/
 
 class MyClient {
     public static void main(String[] args) throws IOException {
@@ -30,20 +10,58 @@ class MyClient {
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 
-        // send HELO
-        out.println("HELO");
-        String response = in.readLine(); // receive OK
-        System.out.println("Server: " + response);
+        String message, response;
 
-        // send AUTH <user>
-        out.println("AUTH garry");
+        // send HELO
+        message = "HELO";
+        out.println(message);
+        System.out.println("Client: " + message);
         response = in.readLine(); // receive OK
         System.out.println("Server: " + response);
 
-        while(response.equals(NONE)){
-            
+        // send AUTH <user>
+        message = "AUTH garry";
+        out.println(message);
+        System.out.println("Client: " + message);
+        response = in.readLine(); // receive OK
+        System.out.println("Server: " + response);
+
+        while(!response.equals(NONE)){
+            message = "REDY";
+            out.println(message);
+            System.out.println("Client: " + message);
+            response = in.readLine();
+            System.out.println("Server: " + response);
+
+            message = "GETS All";
+            out.printLn(message);
+            System.out.println("Client: " + message);
+            response = in.readLine();
+            System.out.println("Server: " + response);
+
+            String[] servInfo = response.split(" ");
+            int nRecs = servInfo[1];
+
+            message = "OK";
+            out.printLn(message);
+            System.out.println("Client: " + message);
+            response = in.readLine();
+            System.out.println("Server: " + response);
+
+            int nCores = 0;
+            String[] servSpecs;
+
+            for(int i = 0; i < nRecs; ++i) {
+                servSpecs = response.split(" ");
+
+            }
+            /*
+            if(){
+
+            }
+            */
         }
-      
+
 
   /*
         out.println("REDY");
@@ -98,7 +116,9 @@ class MyClient {
 		System.out.println("Server: " + response);
         }
 */
-        out.println("QUIT");
+        message = "QUIT";
+        out.println(message);
+        System.out.println("Client: " + message);
         response = in.readLine();
         System.out.println("Server: " + response);
 

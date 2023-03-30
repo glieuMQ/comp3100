@@ -33,44 +33,54 @@ class MyClient {
             response = in.readLine();
             System.out.println("Server: " + response);
 
+            String job = new String(response);
+            System.out.println(job);
+
             message = "GETS All";
-            out.printLn(message);
+            out.println(message);
             System.out.println("Client: " + message);
             response = in.readLine();
             System.out.println("Server: " + response);
 
             String[] servInfo = response.split(" ");
-            int nRecs = servInfo[1];
+            int nRecs = Integer.parseInt(servInfo[1]);
 
             message = "OK";
-            out.printLn(message);
+            out.println(message);
             System.out.println("Client: " + message);
             response = in.readLine();
             System.out.println("Server: " + response);
 
-            String job = response.copyValueOf(response);
-
             int nCores = 0;
+            String sType = "";
             String[] servSpecs;
 
-            for(int i = 0; i < nRecs; i++) {
+            for(int i = 0; i < nRecs; ++i) {
                 servSpecs = response.split(" ");
-                if(serverSpecs[4].compareTo(nCore) >= 0){
-                    nCore = servSpecs[4];
+                if(Integer.parseInt(servSpecs[4]) >= nCores){
+                    nCores = Integer.parseInt(servSpecs[4]);
                     sType = servSpecs[0];
                 }
+                message = "OK";
+                out.println(message);
+                System.out.println("Client: " + message);
+                response = in.readLine();
+                System.out.println("Server: " + response);
             }
 
+            System.out.println("Checkpoint: " + nCores + ", " + sType);
+
             message = "OK";
-            out.printLn(message);
+            out.println(message);
             System.out.println("Client: " + message);
             response = in.readLine();
             System.out.println("Server: " + response);
 
             String[] jobArr = job.split(" ");
+            System.out.println(job);
             if(jobArr[0].equals("JOBN")){
                 message = "SCHD " + jobArr[2] + " " + sType + " 0";
-                out.printLn(message);
+                out.println(message);
                 System.out.println("Client: " + message);
                 response = in.readLine();
                 System.out.println("Server: " + response);

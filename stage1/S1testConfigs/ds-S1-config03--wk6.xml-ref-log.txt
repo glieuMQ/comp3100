@@ -19,12 +19,6 @@ t:         60 job     1 (waiting) on # 1 of server super (booting) SCHEDULED
 SENT OK
 RCVD REDY
 SENT JOBN 76 2 877 2 1500 2100
-RCVD SCHD 2 super 2
-RCVD REDY
-SENT JOBN 76 2 877 2 1500 2100
-RCVD SCHD 2 super 3
-RCVD REDY
-SENT JOBN 76 2 877 2 1500 2100
 RCVD SCHD 2 super 0
 t:         76 job     2 (waiting) on # 0 of server super (booting) SCHEDULED
 SENT OK
@@ -36,12 +30,6 @@ SENT OK
 RCVD REDY
 t:        127 job     0 on # 0 of server super RUNNING
 t:        127 job     2 on # 0 of server super RUNNING
-SENT JOBN 147 4 95 1 100 2000
-RCVD SCHD 4 super 2
-RCVD REDY
-SENT JOBN 147 4 95 1 100 2000
-RCVD SCHD 4 super 3
-RCVD REDY
 SENT JOBN 147 4 95 1 100 2000
 RCVD SCHD 4 super 0
 t:        147 job     4 (running) on # 0 of server super (active) SCHEDULED
@@ -57,12 +45,6 @@ t:        186 job     5 on # 1 of server super RUNNING
 SENT OK
 RCVD REDY
 SENT JOBN 228 6 5774 4 4000 7600
-RCVD SCHD 6 super 2
-RCVD REDY
-SENT JOBN 228 6 5774 4 4000 7600
-RCVD SCHD 6 super 3
-RCVD REDY
-SENT JOBN 228 6 5774 4 4000 7600
 RCVD SCHD 6 super 0
 t:        228 job     6 (running) on # 0 of server super (active) SCHEDULED
 t:        228 job     6 on # 0 of server super RUNNING
@@ -73,12 +55,6 @@ RCVD SCHD 7 super 1
 t:        255 job     7 (running) on # 1 of server super (active) SCHEDULED
 t:        255 job     7 on # 1 of server super RUNNING
 SENT OK
-RCVD REDY
-SENT JOBN 279 8 1006 1 100 800
-RCVD SCHD 8 super 2
-RCVD REDY
-SENT JOBN 279 8 1006 1 100 800
-RCVD SCHD 8 super 3
 RCVD REDY
 SENT JOBN 279 8 1006 1 100 800
 RCVD SCHD 8 super 0
@@ -93,12 +69,6 @@ t:        284 job     9 on # 1 of server super RUNNING
 SENT OK
 RCVD REDY
 SENT JOBN 286 10 231 1 100 1600
-RCVD SCHD 10 super 2
-RCVD REDY
-SENT JOBN 286 10 231 1 100 1600
-RCVD SCHD 10 super 3
-RCVD REDY
-SENT JOBN 286 10 231 1 100 1600
 RCVD SCHD 10 super 0
 t:        286 job    10 (running) on # 0 of server super (active) SCHEDULED
 t:        286 job    10 on # 0 of server super RUNNING
@@ -111,12 +81,6 @@ t:        298 job    11 on # 1 of server super RUNNING
 SENT OK
 RCVD REDY
 SENT JOBN 300 12 51 1 700 400
-RCVD SCHD 12 super 2
-RCVD REDY
-SENT JOBN 300 12 51 1 700 400
-RCVD SCHD 12 super 3
-RCVD REDY
-SENT JOBN 300 12 51 1 700 400
 RCVD SCHD 12 super 0
 t:        300 job    12 (running) on # 0 of server super (active) SCHEDULED
 t:        300 job    12 on # 0 of server super RUNNING
@@ -126,12 +90,6 @@ SENT JOBN 302 13 9 3 1900 500
 RCVD SCHD 13 super 1
 t:        302 job    13 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
-RCVD REDY
-SENT JOBN 307 14 10 4 3500 3900
-RCVD SCHD 14 super 2
-RCVD REDY
-SENT JOBN 307 14 10 4 3500 3900
-RCVD SCHD 14 super 3
 RCVD REDY
 SENT JOBN 307 14 10 4 3500 3900
 RCVD SCHD 14 super 0
@@ -148,12 +106,6 @@ t:        310 job    15 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
 RCVD REDY
 SENT JOBN 316 16 5237 2 1300 1200
-RCVD SCHD 16 super 2
-RCVD REDY
-SENT JOBN 316 16 5237 2 1300 1200
-RCVD SCHD 16 super 3
-RCVD REDY
-SENT JOBN 316 16 5237 2 1300 1200
 RCVD SCHD 16 super 0
 t:        316 job    16 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -162,12 +114,6 @@ SENT JOBN 320 17 1382 6 5700 10900
 RCVD SCHD 17 super 1
 t:        320 job    17 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
-RCVD REDY
-SENT JOBN 322 18 9 4 3200 6400
-RCVD SCHD 18 super 2
-RCVD REDY
-SENT JOBN 322 18 9 4 3200 6400
-RCVD SCHD 18 super 3
 RCVD REDY
 SENT JOBN 322 18 9 4 3200 6400
 RCVD SCHD 18 super 0
@@ -184,12 +130,6 @@ t:        329 job    13 on # 1 of server super RUNNING
 SENT JCPL 329 11 super 1
 RCVD REDY
 SENT JOBN 329 20 104 7 7200 12000
-RCVD SCHD 20 super 2
-RCVD REDY
-SENT JOBN 329 20 104 7 7200 12000
-RCVD SCHD 20 super 3
-RCVD REDY
-SENT JOBN 329 20 104 7 7200 12000
 RCVD SCHD 20 super 0
 t:        329 job    20 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -198,12 +138,6 @@ SENT JOBN 332 21 95 3 500 2800
 RCVD SCHD 21 super 1
 t:        332 job    21 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
-RCVD REDY
-SENT JOBN 336 22 681 4 1100 900
-RCVD SCHD 22 super 2
-RCVD REDY
-SENT JOBN 336 22 681 4 1100 900
-RCVD SCHD 22 super 3
 RCVD REDY
 SENT JOBN 336 22 681 4 1100 900
 RCVD SCHD 22 super 0
@@ -216,12 +150,6 @@ t:        336 job    23 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
 RCVD REDY
 SENT JOBN 340 24 587 15 13900 21200
-RCVD SCHD 24 super 2
-RCVD REDY
-SENT JOBN 340 24 587 15 13900 21200
-RCVD SCHD 24 super 3
-RCVD REDY
-SENT JOBN 340 24 587 15 13900 21200
 RCVD SCHD 24 super 0
 t:        340 job    24 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -230,12 +158,6 @@ SENT JOBN 342 25 758 2 1500 3700
 RCVD SCHD 25 super 1
 t:        342 job    25 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
-RCVD REDY
-SENT JOBN 346 26 6 12 23800 44300
-RCVD SCHD 26 super 2
-RCVD REDY
-SENT JOBN 346 26 6 12 23800 44300
-RCVD SCHD 26 super 3
 RCVD REDY
 SENT JOBN 346 26 6 12 23800 44300
 RCVD SCHD 26 super 0
@@ -248,12 +170,6 @@ t:        347 job    27 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
 RCVD REDY
 SENT JOBN 351 28 674 4 1300 2800
-RCVD SCHD 28 super 2
-RCVD REDY
-SENT JOBN 351 28 674 4 1300 2800
-RCVD SCHD 28 super 3
-RCVD REDY
-SENT JOBN 351 28 674 4 1300 2800
 RCVD SCHD 28 super 0
 t:        351 job    28 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -264,12 +180,6 @@ t:        360 job    29 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
 RCVD REDY
 SENT JOBN 362 30 798 12 1900 13400
-RCVD SCHD 30 super 2
-RCVD REDY
-SENT JOBN 362 30 798 12 1900 13400
-RCVD SCHD 30 super 3
-RCVD REDY
-SENT JOBN 362 30 798 12 1900 13400
 RCVD SCHD 30 super 0
 t:        362 job    30 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -278,12 +188,6 @@ SENT JOBN 362 31 3294 7 3200 11600
 RCVD SCHD 31 super 1
 t:        362 job    31 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
-RCVD REDY
-SENT JOBN 393 32 1167 2 1000 3000
-RCVD SCHD 32 super 2
-RCVD REDY
-SENT JOBN 393 32 1167 2 1000 3000
-RCVD SCHD 32 super 3
 RCVD REDY
 SENT JOBN 393 32 1167 2 1000 3000
 RCVD SCHD 32 super 0
@@ -297,12 +201,6 @@ SENT OK
 RCVD REDY
 t:        398 job    12 on # 0 of server super COMPLETED
 SENT JCPL 398 12 super 0
-RCVD REDY
-SENT JOBN 427 34 1944 1 700 100
-RCVD SCHD 34 super 2
-RCVD REDY
-SENT JOBN 427 34 1944 1 700 100
-RCVD SCHD 34 super 3
 RCVD REDY
 SENT JOBN 427 34 1944 1 700 100
 RCVD SCHD 34 super 0
@@ -323,12 +221,6 @@ t:        459 job    15 on # 1 of server super RUNNING
 SENT JCPL 459 5 super 1
 RCVD REDY
 SENT JOBN 464 36 515 2 1600 3200
-RCVD SCHD 36 super 2
-RCVD REDY
-SENT JOBN 464 36 515 2 1600 3200
-RCVD SCHD 36 super 3
-RCVD REDY
-SENT JOBN 464 36 515 2 1600 3200
 RCVD SCHD 36 super 0
 t:        464 job    36 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -337,12 +229,6 @@ SENT JOBN 475 37 324 7 5600 3900
 RCVD SCHD 37 super 1
 t:        475 job    37 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
-RCVD REDY
-SENT JOBN 477 38 821 1 1000 200
-RCVD SCHD 38 super 2
-RCVD REDY
-SENT JOBN 477 38 821 1 1000 200
-RCVD SCHD 38 super 3
 RCVD REDY
 SENT JOBN 477 38 821 1 1000 200
 RCVD SCHD 38 super 0
@@ -358,12 +244,6 @@ t:        491 job    39 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
 RCVD REDY
 SENT JOBN 501 40 48 4 4200 5900
-RCVD SCHD 40 super 2
-RCVD REDY
-SENT JOBN 501 40 48 4 4200 5900
-RCVD SCHD 40 super 3
-RCVD REDY
-SENT JOBN 501 40 48 4 4200 5900
 RCVD SCHD 40 super 0
 t:        501 job    40 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -374,12 +254,6 @@ t:        502 job    41 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
 RCVD REDY
 SENT JOBN 502 42 111 1 300 1400
-RCVD SCHD 42 super 2
-RCVD REDY
-SENT JOBN 502 42 111 1 300 1400
-RCVD SCHD 42 super 3
-RCVD REDY
-SENT JOBN 502 42 111 1 300 1400
 RCVD SCHD 42 super 0
 t:        502 job    42 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -388,12 +262,6 @@ SENT JOBN 505 43 232 12 15900 16000
 RCVD SCHD 43 super 1
 t:        505 job    43 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
-RCVD REDY
-SENT JOBN 514 44 182 10 6000 36100
-RCVD SCHD 44 super 2
-RCVD REDY
-SENT JOBN 514 44 182 10 6000 36100
-RCVD SCHD 44 super 3
 RCVD REDY
 SENT JOBN 514 44 182 10 6000 36100
 RCVD SCHD 44 super 0
@@ -417,12 +285,6 @@ t:        649 job    17 on # 1 of server super RUNNING
 SENT JCPL 649 13 super 1
 RCVD REDY
 SENT JOBN 660 46 178 1 400 1000
-RCVD SCHD 46 super 2
-RCVD REDY
-SENT JOBN 660 46 178 1 400 1000
-RCVD SCHD 46 super 3
-RCVD REDY
-SENT JOBN 660 46 178 1 400 1000
 RCVD SCHD 46 super 0
 t:        660 job    46 (waiting) on # 0 of server super (active) SCHEDULED
 SENT OK
@@ -431,12 +293,6 @@ SENT JOBN 677 47 485 1 800 1700
 RCVD SCHD 47 super 1
 t:        677 job    47 (waiting) on # 1 of server super (active) SCHEDULED
 SENT OK
-RCVD REDY
-SENT JOBN 687 48 2276 3 3000 2500
-RCVD SCHD 48 super 2
-RCVD REDY
-SENT JOBN 687 48 2276 3 3000 2500
-RCVD SCHD 48 super 3
 RCVD REDY
 SENT JOBN 687 48 2276 3 3000 2500
 RCVD SCHD 48 super 0

@@ -72,7 +72,7 @@ class MyClient {
                     currServCores = Integer.parseInt(servSpecs[4]);
                     currServType = servSpecs[0];
 
-                    if(currServCores == largestServCores){
+                    if(currServCores == largestServCores && currServType.equals(largestServType)){
                         largestServNum++;
                     }
 

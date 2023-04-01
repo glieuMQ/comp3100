@@ -22,8 +22,9 @@ class MyClient {
         int largestServNum = 0; // quantity of the largest server type
         String largestServType = ""; // stores largest server type
         int servID = 0; // counter variable used to perform the round robin
-        String currServType = ""; // variables used for searching.
+        String currServType = ""; // variables used for searching
         int currServCores = 0;
+        String[][] serverList; // holds specs of each server -> not used here. More useful for stage 2
 
         // INITIAL HANDSHAKE --------------------------------------------------------------------------------
         // send HELO
@@ -68,16 +69,20 @@ class MyClient {
 
         // extracting number of cores and server type, and starting count
         String[] servSpecs = receive.split(" ");
+        serverList = new String[nRecs][servSpecs.length];
+        serverList[0] = servSpecs;
         largestServCores = Integer.parseInt(servSpecs[4]);
-        largestServType = servSpecs[0];
+        largestServType = servSpecs[0]; // storing server information -> not used in stage 1
         largestServNum++;
 
         // retrieving records for each server
-        for(int i = 0; i < nRecs-1; i++){
+        // linear search since records are retrieved one-by-one anyway
+        for(int i = 1; i < nRecs; i++){
             receive = in.readLine();
             System.out.println("Server: " + receive);
             servSpecs = receive.split(" ");
-            
+            serverList[i] = servSpecs; // storing serving information -> not used in stage 1
+
             currServCores = Integer.parseInt(servSpecs[4]);
             currServType = servSpecs[0];
 
@@ -115,7 +120,7 @@ class MyClient {
             // schedule job if received JOBN after REDY
             if(jobDetails[0].equals("JOBN")){
                 send = "SCHD " + jobDetails[2] + " " + largestServType + " " + servID;
-                servID++; // next largest server
+                servID++; // next server of the largest type
                 out.println(send);
                 System.out.println("Client: " + send);
                 receive = in.readLine();
@@ -126,7 +131,7 @@ class MyClient {
             send = "REDY";
             out.println(send);
             System.out.println("Client: " + send);
-            receive = in.readLine();
+            receive = in.readLine(); // receive OK
             job = new String(receive);
             System.out.println("Server: " + receive + "\n---------------------------------------");
         }

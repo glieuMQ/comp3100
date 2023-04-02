@@ -30,32 +30,24 @@ class MyClient {
         // send HELO
         send = "HELO";
         out.println(send);
-        System.out.println("Client: " + send);
         receive = in.readLine(); // receive OK
-        System.out.println("Server: " + receive);
 
         // send AUTH <user>
         send = "AUTH garry";
         out.println(send);
-        System.out.println("Client: " + send);
         receive = in.readLine(); // receive OK
-        System.out.println("Server: " + receive);
 
         // send REDY
         send = "REDY";
         out.println(send);
-        System.out.println("Client: " + send);
         receive = in.readLine();
         String job = new String(receive); // storing response to REDY so that jobs can be scheduled later on
-        System.out.println("Server: " + receive);
 
         // DETERMINING LARGEST SERVER TYPE AND QUANTITY ----------------------------------------------------
         // send GETS to query server states
         send = "GETS All";
         out.println(send);
-        System.out.println("Client: " + send);
         receive = in.readLine(); // receive DATA nRecs recLen
-        System.out.println("Server: " + receive);
 
         String[] dataArr = receive.split(" ");
         int nRecs = Integer.parseInt(dataArr[1]);
@@ -63,9 +55,7 @@ class MyClient {
         // send OK for DATA
         send = "OK";
         out.println(send);
-        System.out.println("Client: " + send);
         receive = in.readLine(); // receive record about first server
-        System.out.println("Server: " + receive);
 
         // extracting number of cores and server type, and starting count
         String[] servSpecs = receive.split(" ");
@@ -79,7 +69,6 @@ class MyClient {
         // linear search since records are retrieved one-by-one anyway
         for(int i = 1; i < nRecs; i++){
             receive = in.readLine();
-            System.out.println("Server: " + receive);
             servSpecs = receive.split(" ");
             serverList[i] = servSpecs; // storing serving information -> not used in stage 1
 
@@ -102,10 +91,7 @@ class MyClient {
         // send OK after receiving last record
         send = "OK";
         out.println(send);
-        System.out.println("Client: " + send);
         receive = in.readLine(); // receive .
-        System.out.println("Server: " + receive);
-        //System.out.println("Largest Server Info: " + largestServCores + " " + largestServNum + " " + largestServType);
 
         // SCHEDULING JOBS USING LRR --------------------------------------------------------------------
 
@@ -121,28 +107,22 @@ class MyClient {
             if(jobDetails[0].equals("JOBN")){
                 send = "SCHD " + jobDetails[2] + " " + largestServType + " " + servID;
                 servID++; // next server of the largest type
-                out.println(send);
-                System.out.println("Client: " + send);
+                out.println(send); // receive OK
                 receive = in.readLine();
-                System.out.println("Server: " + receive);
             }
 
             // send REDY for next job
             send = "REDY";
             out.println(send);
-            System.out.println("Client: " + send);
-            receive = in.readLine(); // receive OK
+            receive = in.readLine(); // receive next event
             job = new String(receive);
-            System.out.println("Server: " + receive + "\n---------------------------------------");
         }
 
         // TERMINATING CLIENT-SERVER INTERACTION ----------------------------------------------------------
         // send QUIT
         send = "QUIT";
         out.println(send);
-        System.out.println("Client: " + send);
         receive = in.readLine(); // receive QUIT
-        System.out.println("Server: " + receive);
 
         // closing input/output streams and socket
         in.close();

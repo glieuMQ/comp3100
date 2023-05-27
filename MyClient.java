@@ -36,7 +36,7 @@ class MyClient {
 
         while(!event.equals("NONE")){
             // schedule job following first fit algorithm.
-            nfschedv2(event);
+            ffsched(event);
             // send REDY for next event. receive next event and store it
             receive = sendMessage("REDY");
             event = new String(receive);
@@ -103,101 +103,6 @@ class MyClient {
 
             // scheduling job
             receive = sendMessage("SCHD " + jobDetails[2] + " " + servDetails[0] + " " + servDetails[1]);
-        }
-    }
-
-    public static void nfsched(String job){
-        if(serverList == null){
-            serverList = new ArrayList<String[]>();
-            receive = sendMessage("GETS All");
-
-            String[] dataArr = receive.split(" ");
-            int nRecs = Integer.parseInt(dataArr[1]);
-
-            receive = sendMessage("OK");
-            serverList.add(receive.split(" "));
-
-            for(int i = 1; i < nRecs; i++){
-                try{
-                    receive = in.readLine();
-                    serverList.add(receive.split(" "));
-                }
-                catch(IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            //send OK after receiving last record. receive .
-            receive = sendMessage("OK");
-        }
-
-        if(iter == null || !iter.hasNext()){
-            iter = serverList.iterator();
-        }
-
-        String[] jobDetails = job.split(" ");
-
-        if(jobDetails[0].equals("JOBN")){
-            while(iter.hasNext()){
-                currServer = iter.next();
-                
-                //if(currServer[4].compareTo(jobDetails[4]) < 0 || currServer[5].compareTo(jobDetails[5]) < 0 || currServer[6].compareTo(jobDetails[6]) < 0){
-                if(Integer.parseInt(currServer[4]) < Integer.parseInt(jobDetails[4])){
-                    System.out.println("continue");
-                    continue;
-                }
-
-                receive = sendMessage("SCHD " + jobDetails[2] + " " + currServer[0] + " " + currServer[1]);
-                System.out.println("scheduled");
-                return;
-            }
-        }
-    }
-
-    public static void nfschedv2(String job){
-        if(serverList2 == null){
-            receive = sendMessage("GETS All");
-
-            String[] dataArr = receive.split(" ");
-            int nRecs = Integer.parseInt(dataArr[1]);
-
-            receive = sendMessage("OK");
-            serverList2 = new String[nRecs][9];
-            serverList2[0] = receive.split(" ");
-
-            for(int i = 1; i < nRecs; i++){
-                try{
-                    receive = in.readLine();
-                    serverList2[i] = receive.split(" ");
-                }
-                catch(IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            //send OK after receiving last record. receive .
-            receive = sendMessage("OK");
-        }
-
-        String[] jobDetails = job.split(" ");
-
-        if(jobDetails[0].equals("JOBN")){
-            while(true){
-                currServer = serverList2[j];
-                //if(currServer[4].compareTo(jobDetails[4]) < 0 || currServer[5].compareTo(jobDetails[5]) < 0 || currServer[6].compareTo(jobDetails[6]) < 0){
-                if(Integer.parseInt(currServer[4]) < Integer.parseInt(jobDetails[4])){
-                    j++;
-                    if(j >= serverList2.length){
-                        j = 0;
-                    }
-                    continue;
-                }
-
-                receive = sendMessage("SCHD " + jobDetails[2] + " " + currServer[0] + " " + currServer[1]);
-                j++;
-                if(j >= serverList2.length){
-                    j = 0;
-                }
-                return;
-            }
         }
     }
 }

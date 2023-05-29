@@ -37,7 +37,7 @@ class MyClient {
 
         while(!event.equals("NONE")){
             // schedule normal jobs following first fit algorithm
-            nfsched(event);
+            ffsched(event);
             // send REDY, receive next event and store it
             receive = sendMessage("REDY");
             event = new String(receive);
@@ -115,97 +115,5 @@ class MyClient {
             receive = sendMessage("SCHD " + jobDetails[2] + " " + servDetails[0] + " " + servDetails[1]);
         }
     }
-
-
-    // public static void nfsched(String job){
-    //     String[] jobDetails = job.split(" ");
-        
-    //     if(jobDetails[0].equals("JOBN")){
-    //         // UPDATING LIST WITH CURRENT SERVER STATE INFO--------------------------------
-    //         receive = sendMessage("GETS All");
-
-    //         // instantiating list if it does not already exist
-    //         if(serverList == null){
-    //             String[] dataArr = receive.split(" ");
-    //             int nRecs = Integer.parseInt(dataArr[1]);
-    //             serverList = new String[nRecs][9];
-    //         }
-
-    //         receive = sendMessage("OK");
-    //         serverList[0] = receive.split(" ");
-
-    //         for(int i = 1; i < serverList.length; i++){
-    //             try{
-    //                 receive = in.readLine();
-    //                 serverList[i] = receive.split(" ");
-    //             }
-    //             catch(IOException e) {
-    //                 e.printStackTrace();
-    //             }
-    //         }
-    //         receive = sendMessage("OK"); //send OK after receiving last record. receive .
-
-    //         // FINDING FIRST AVAILABLE SERVER --------------------------------------
-    //         currServer = serverList[j];
-    //         int count = 0;
-    //         boolean NoneAvailable = false;
-    //         while(Integer.parseInt(currServer[4]) < Integer.parseInt(jobDetails[4]) /*||
-    //               /*Integer.parseInt(currServer[5]) < Integer.parseInt(jobDetails[5]) ||
-    //               Integer.parseInt(currServer[6]) < Integer.parseInt(jobDetails[6]) ||
-    //               currServer[2].equals("active")*/){
-    //             System.out.println("j = "+ j + "; currServer = " + currServer[4] + "; state = " + currServer[2] + "; jobDetails = " + jobDetails[4]);
-    //             j++;
-    //             count++;
-    //             if(j > serverList.length-1){
-    //                 j = 0;
-    //             }
-
-    //             // breaking loop when the entire list has been checked and no available servers were found
-    //             if(count > serverList.length-1){
-    //                 count = 0;
-    //                 NoneAvailable = true;
-    //                 break;
-    //             }
-    //             currServer = serverList[j];
-    //         }
-
-    //         // FINDING FIRST CAPABLE SERVER IF NONE ARE AVAILABLE----------------------------------------------------
-    //         if(NoneAvailable){
-    //             receive = sendMessage("GETS Capable " + jobDetails[4] + " " + jobDetails[5] + " " + jobDetails[6]);
-    //             String[] dataArr = receive.split(" ");
-    //             int nRecs = Integer.parseInt(dataArr[1]);
-
-    //             receive = sendMessage("OK");
-
-    //             String servFirst = new String(receive);
-    //             currServer = servFirst.split(" ");
-
-    //             // loop through remaining records since we're only interested in first
-    //             for(int i = 1; i < nRecs; i++){
-    //                 try{
-    //                     receive = in.readLine();
-    //                 }
-    //                 catch(IOException e) {
-    //                     e.printStackTrace();
-    //                 }
-    //             }
-
-    //             //send OK after receiving last record and receive "."
-    //             receive = sendMessage("OK");
-    //             NoneAvailable = false;
-    //         }
-
-    //         // SCHEDULING JOB ----------------------------------------------------------------------
-    //         receive = sendMessage("SCHD " + jobDetails[2] + " " + currServer[0] + " " + currServer[1]);
-    //         j++;
-    //         if(j > serverList.length-1){
-    //             j = 0;
-    //         }
-    //         System.out.println("scheduled");
-    //         return;
-    //     }
-
-    //     return;
-    // }
 
 }

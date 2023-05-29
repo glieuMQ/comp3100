@@ -6,18 +6,12 @@
 
 import java.net.*;
 import java.util.*;
-
-import javax.swing.event.SwingPropertyChangeSupport;
-
 import java.io.*;
 
 class MyClient {
-    static BufferedReader in ;
+    static BufferedReader in;
     static PrintWriter out;
     static String receive;
-    static String[][] serverList;
-    static String[] currServer;
-    static int j = 0;
 
     public static void main(String[] args) throws IOException {
         // creating a socket to connect to server on localhost:50000
@@ -115,5 +109,4 @@ class MyClient {
             receive = sendMessage("SCHD " + jobDetails[2] + " " + servDetails[0] + " " + servDetails[1]);
         }
     }
-
 }
